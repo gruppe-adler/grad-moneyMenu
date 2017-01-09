@@ -7,6 +7,8 @@ class GRAD_moneymenu {
         file = MODULES_DIRECTORY\grad-moneyMenu\functions;
 
         class addFunds {};
+        class addGiveAction {};
+        class addTakeAction {};
         class checkSend {};
         class formattedHint {};
         class getModuleRoot {};
@@ -14,6 +16,7 @@ class GRAD_moneymenu {
         class loadMenu {};
         class receiveMoney {};
         class sendMoney {};
+        class setStorage {};
         class updateMoney {};
     };
 };
