@@ -6,9 +6,11 @@ class GRAD_moneymenu {
     class common {
         file = MODULES_DIRECTORY\grad-moneyMenu\functions;
 
+        class addCheckAction {};
         class addFunds {};
         class addGiveAction {};
         class addTakeAction {};
+        class addTransferAction {};
         class checkSend {};
         class formattedHint {};
         class getModuleRoot {};
@@ -18,5 +20,6 @@ class GRAD_moneymenu {
         class sendMoney {};
         class setStorage {};
         class updateMoney {};
+        class updatePlayerList {};
     };
 };

@@ -19,7 +19,30 @@ _dialog = findDisplay grad_moneymenu_DIALOG;
 _inputBox = _dialog displayCtrl grad_moneymenu_input;
 _amount = round (parseNumber (ctrlText _inputBox));
 
-_money = if (_mode == "TAKE") then {_target getVariable ["grad_lbm_myFunds",0]} else {player getVariable ["grad_lbm_myFunds",0]};
+if (_mode == "ATM_TRANSFER") then {
+    _playerList = _dialog displayCtrl grad_moneymenu_recipient;
+    _lbData = _playerList lbData (lbCursel _playerList);
+    _recipient = if (_lbData == "") then {objNull} else {[_lbData] call BIS_fnc_getUnitByUID};
+    uiNamespace setVariable ["grad_moneymenu_currentRecipient", _recipient];
+};
+
+if (isNull _recipient) exitWith {
+    ["Error: Coult not find recipient."] call grad_moneymenu_fnc_formattedHint;
+};
+
+_money = switch (true) do {
+    case (_mode == "TAKE"): {
+        _target getVariable ["grad_lbm_myFunds",0];
+    };
+
+    case (_mode == "ATM_WITHDRAW"): {
+        player getVariable ["grad_moneymenu_myBankBalance",0];
+    };
+
+    default {
+        player getVariable ["grad_lbm_myFunds",0];
+    };
+};
 
 //not enough money
 if (_money < _amount) then {

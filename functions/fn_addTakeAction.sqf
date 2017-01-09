@@ -4,11 +4,17 @@ if (!hasInterface) exitWith {};
 if (isNil "_target") exitWith {};
 if ((typeName _target) == "OBJECT" && {isNull _target}) exitWith {};
 
+if (isNil "grad_moneymenu_atmObjects") then {grad_moneymenu_atmObjects = [missionConfigFile >> "CfgGradBuymenu" >> "atmObjects", "array", 0] call CBA_fnc_getConfigEntry};
+
+_actionDesc = if (_target in grad_moneymenu_atmObjects) then {"Withdraw money"} else {"Take money"};
+_mode = if (_target in grad_moneymenu_atmObjects) then {"ATM_WITHDRAW"} else {"TAKE"};
+_code = compile (format ["[_this select 0,'%1'] call grad_moneymenu_fnc_loadMenu",_mode]);
+
 _action = [
     "GRAD_moneymenu_mainTakeAction",
-    "Take money",
+    _actionDesc,
     (missionNamespace getVariable ["GRAD_moneymenu_moduleRoot",[] call GRAD_moneymenu_fnc_getModuleRoot]) + "\data\moneyIcon.paa",
-    {[_this select 0,"TAKE"] call grad_moneymenu_fnc_loadMenu},
+    _code,
     _condition,
     {},
     _params

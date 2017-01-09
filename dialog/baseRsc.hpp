@@ -173,3 +173,50 @@ class grad_mm_RscEdit {
 	sizeEx = 0.04 * TEXT_SCALE;
 	canModify = 1;
 };
+
+class grad_mm_RscScrollbar {
+	color[] = {1, 1, 1, 1};
+	colorActive[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R', 0.69])", "(profileNamespace getVariable ['GUI_BCG_RGB_G', 0.75])", "(profileNamespace getVariable ['GUI_BCG_RGB_B', 0.5])", 1};
+	colorDisabled[] = {};
+	arrowEmpty = "\A3\ui_f\data\GUI\RscCommon\rsccombo\arrow_combo_ca.paa";
+	arrowFull = "\A3\ui_f\data\GUI\RscCommon\rsccombo\arrow_combo_active_ca.paa";
+	thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+	border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+};
+
+class grad_mm_RscCombo {
+	idc = -1;
+	type = CT_COMBO;
+	style = ST_CENTER;
+	sizeEx = 0.042;
+	font = puristaMedium;
+	rowHeight = 0.04;
+	wholeHeight = 0.48;
+	maxHistoryDelay = 0;
+	autoScrollDelay = 5;
+	autoScrollSpeed = -1;
+	autoScrollRewind = 0;
+	color[] = {0, 0, 0, 0};
+	colorText[] = {1, 1, 1, 1};
+	colorSelect[] = {0, 0, 0, 1};
+	colorDisabled[] = {};
+	colorBackground[] = {0, 0, 0, 1};
+	colorSelectBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R', 0.69])", "(profileNamespace getVariable ['GUI_BCG_RGB_G', 0.75])", "(profileNamespace getVariable ['GUI_BCG_RGB_B', 0.5])", 1};
+	colorSelectBackground2[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R', 0.69])", "(profileNamespace getVariable ['GUI_BCG_RGB_G', 0.75])", "(profileNamespace getVariable ['GUI_BCG_RGB_B', 0.5])", 1};
+	colorScrollbar[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R', 0.69])", "(profileNamespace getVariable ['GUI_BCG_RGB_G', 0.75])", "(profileNamespace getVariable ['GUI_BCG_RGB_B', 0.5])", 1};
+	soundSelect[] = {"\dss_sfx\Dialogs\SubSel.ogg", 0, 1};
+	soundExpand[] = {"\dss_sfx\Dialogs\Hover.ogg", 0, 1};
+	soundCollapse[] = {"\dss_sfx\Dialogs\Hover.ogg", 0, 1};
+	arrowEmpty = "\A3\ui_f\data\GUI\RscCommon\rsccombo\arrow_combo_ca.paa";
+	arrowFull = "\A3\ui_f\data\GUI\RscCommon\rsccombo\arrow_combo_active_ca.paa";
+	class ComboScrollbar : grad_mm_RscScrollbar {
+		color[] = {1, 1, 1, 1};
+		colorActive[] = {0, 0, 0, 1};
+		colorDisabled[] = {};
+		autoScrollEnabled = 1;
+		arrowEmpty = "\A3\ui_f\data\GUI\RscCommon\rsccombo\arrow_combo_ca.paa";
+		arrowFull = "\A3\ui_f\data\GUI\RscCommon\rsccombo\arrow_combo_active_ca.paa";
+		thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+		border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+	};
+};

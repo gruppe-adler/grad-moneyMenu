@@ -1,18 +1,26 @@
 #include "..\dialog\defines.hpp"
 disableSerialization;
 
-params [["_target",player]];
-
-_money = _target getVariable ["grad_lbm_myFunds",0];
+params [["_target",player],["_mode","GIVE"]];
 
 _dialog = findDisplay grad_moneymenu_DIALOG;
 _myMoney = _dialog displayCtrl grad_moneymenu_myfunds;
 _myMoneyDesc = _dialog displayCtrl grad_moneymenu_myfundsDesc;
 
-if (_target == player) then {
-    _myMoneyDesc ctrlSetText "My Funds:";
-} else {
-    _myMoneyDesc ctrlSetText "Funds:";
+_money = if (_mode == "ATM_WITHDRAW") then {player getVariable ["grad_moneymenu_myBankBalance",0]} else {_target getVariable ["grad_lbm_myFunds",0]};
+
+switch (true) do {
+    case (_mode == "ATM_WITHDRAW"): {
+        _myMoneyDesc ctrlSetText "My Account:";
+    };
+
+    case (_target == player): {
+        _myMoneyDesc ctrlSetText "My Funds:";
+    };
+
+    default {
+        _myMoneyDesc ctrlSetText "Funds:";
+    };
 };
 
 _text = format ["%1 Cr", _money];
