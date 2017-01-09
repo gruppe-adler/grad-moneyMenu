@@ -1,4 +1,4 @@
-params ["_target","_recipient", ["_amount",0], ["_mode", "GIVE"]];
+params ["_target","_recipient", ["_amount",0], ["_mode", "GIVE"],"_sender"];
 
 if (local _recipient && _mode == "GIVE") then {
 
@@ -6,7 +6,7 @@ if (local _recipient && _mode == "GIVE") then {
 
     if (player == _recipient) then {
         [
-            format ["<t color='#00FF00'>%1</t> Cr received from %2.", _amount, (name _target)],
+            format ["<t color='#00FF00'>%1</t> Cr received from %2.", _amount, (name _sender)],
             format ["Wallet: <t color='#00FF00'>%1</t> Cr", player getVariable ["grad_lbm_myFunds",0]]
         ] call grad_moneymenu_fnc_formattedHint;
     };

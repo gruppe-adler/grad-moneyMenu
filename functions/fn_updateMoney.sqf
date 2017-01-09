@@ -7,10 +7,10 @@ _dialog = findDisplay grad_moneymenu_DIALOG;
 _myMoney = _dialog displayCtrl grad_moneymenu_myfunds;
 _myMoneyDesc = _dialog displayCtrl grad_moneymenu_myfundsDesc;
 
-_money = if (_mode == "ATM_WITHDRAW") then {player getVariable ["grad_moneymenu_myBankBalance",0]} else {_target getVariable ["grad_lbm_myFunds",0]};
+_money = if (_mode in ["ATM_WITHDRAW","ATM_TRANSFER"]) then {player getVariable ["grad_moneymenu_myBankBalance",0]} else {_target getVariable ["grad_lbm_myFunds",0]};
 
 switch (true) do {
-    case (_mode == "ATM_WITHDRAW"): {
+    case (_mode in ["ATM_WITHDRAW","ATM_TRANSFER"]): {
         _myMoneyDesc ctrlSetText "My Account:";
     };
 

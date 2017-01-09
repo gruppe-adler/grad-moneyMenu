@@ -49,4 +49,4 @@ switch (_mode) do {
     };
 };
 
-[_target,_recipient,_amount,_mode] remoteExec ["grad_moneymenu_fnc_receiveMoney",0,false];
+[_target,_recipient,_amount,_mode,player] remoteExec ["grad_moneymenu_fnc_receiveMoney",0,false];
