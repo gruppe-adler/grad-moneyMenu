@@ -19,7 +19,7 @@ _dialog = findDisplay grad_moneymenu_DIALOG;
 _inputBox = _dialog displayCtrl grad_moneymenu_input;
 _amount = round (parseNumber (ctrlText _inputBox));
 
-if (_mode == "ATM_TRANSFER") then {
+if (_mode in ["ATM_TRANSFER","DIRECT_SEND"]) then {
     _playerList = _dialog displayCtrl grad_moneymenu_recipient;
     _lbData = _playerList lbData (lbCursel _playerList);
     _recipient = if (_lbData == "") then {objNull} else {[_lbData] call BIS_fnc_getUnitByUID};

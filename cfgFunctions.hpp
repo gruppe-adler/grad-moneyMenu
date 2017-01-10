@@ -9,6 +9,7 @@ class GRAD_moneymenu {
         class addCheckAction {};
         class addFunds {};
         class addGiveAction {};
+        class addSendAction {};
         class addTakeAction {};
         class addTransferAction {};
         class checkSend {};

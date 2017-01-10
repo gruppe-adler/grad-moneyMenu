@@ -1,6 +1,6 @@
 params ["_target","_recipient", ["_amount",0], ["_mode", "GIVE"],"_sender"];
 
-if (local _recipient && _mode == "GIVE") then {
+if (local _recipient && _mode in ["GIVE","DIRECT_SEND"]) then {
 
     _recipient setVariable ["grad_lbm_myFunds", (_recipient getVariable ["grad_lbm_myFunds",0]) + _amount, true];
 

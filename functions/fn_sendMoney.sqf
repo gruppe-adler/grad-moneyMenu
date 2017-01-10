@@ -47,6 +47,15 @@ switch (_mode) do {
             format ["Wallet: <t color='#00FF00'>%1</t> Cr", player getVariable ["grad_lbm_myFunds",0]]
         ] call grad_moneymenu_fnc_formattedHint;
     };
+
+    case ("DIRECT_SEND"): {
+        player setVariable ["grad_lbm_myFunds", ((player getVariable ["grad_lbm_myFunds",0]) - _amount) max 0, true];
+
+        [
+            format ["<t color='#00FF00'>%1</t> Cr sent to %2.", _amount, name _recipient],
+            format ["Wallet: <t color='#00FF00'>%1</t> Cr", player getVariable ["grad_lbm_myFunds",0]]
+        ] call grad_moneymenu_fnc_formattedHint;
+    };
 };
 
 [_target,_recipient,_amount,_mode,player] remoteExec ["grad_moneymenu_fnc_receiveMoney",0,false];

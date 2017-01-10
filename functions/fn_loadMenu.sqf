@@ -3,7 +3,7 @@ disableSerialization;
 
 params ["_target",["_mode","GIVE"]];
 
-if (_mode == "ATM_TRANSFER") then {createDialog "grad_moneyMenu_ATM"} else {createDialog "grad_moneyMenu"};
+if (_mode in ["ATM_TRANSFER", "DIRECT_SEND"]) then {createDialog "grad_moneyMenu_ATM"} else {createDialog "grad_moneyMenu"};
 
 _dialog = findDisplay grad_moneymenu_DIALOG;
 _title = _dialog displayCtrl grad_moneymenu_title;
@@ -46,5 +46,12 @@ switch (_mode) do {
         uiNamespace setVariable ["grad_moneymenu_currentRecipient", player];
         _title ctrlSetText "BANK WITHDRAWAL";
         [_target,_mode] call grad_moneymenu_fnc_updateMoney;
+    };
+
+    case ("DIRECT_SEND"): {
+        uiNamespace setVariable ["grad_moneymenu_currentRecipient", _target];
+        _title ctrlSetText "SEND MONEY";
+        [] call grad_moneymenu_fnc_updatePlayerList;
+        [player,_mode] call grad_moneymenu_fnc_updateMoney;
     };
 };
