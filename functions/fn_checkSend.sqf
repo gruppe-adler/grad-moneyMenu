@@ -23,6 +23,10 @@ if (_mode == "ATM_TRANSFER") then {
     _playerList = _dialog displayCtrl grad_moneymenu_recipient;
     _lbData = _playerList lbData (lbCursel _playerList);
     _recipient = if (_lbData == "") then {objNull} else {[_lbData] call BIS_fnc_getUnitByUID};
+
+    diag_log _lbData;
+    diag_log str _recipient;
+
     uiNamespace setVariable ["grad_moneymenu_currentRecipient", _recipient];
 };
 
@@ -35,7 +39,7 @@ _money = switch (true) do {
         _target getVariable ["grad_lbm_myFunds",0];
     };
 
-    case (_mode == "ATM_WITHDRAW"): {
+    case (_mode in ["ATM_WITHDRAW","ATM_TRANSFER"]): {
         player getVariable ["grad_moneymenu_myBankBalance",0];
     };
 

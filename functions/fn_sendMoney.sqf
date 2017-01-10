@@ -42,7 +42,7 @@ switch (_mode) do {
         player setVariable ["grad_moneymenu_myBankBalance", ((player getVariable ["grad_moneymenu_myBankBalance",0]) - _amount) max 0, true];
 
         [
-            format ["<t color='#00FF00'>%1</t> Cr transferred to %2.", _amount, name _target],
+            format ["<t color='#00FF00'>%1</t> Cr transferred to %2.", _amount, name _recipient],
             format ["Account: <t color='#00FF00'>%1</t> Cr", player getVariable ["grad_moneymenu_myBankBalance",0]],
             format ["Wallet: <t color='#00FF00'>%1</t> Cr", player getVariable ["grad_lbm_myFunds",0]]
         ] call grad_moneymenu_fnc_formattedHint;

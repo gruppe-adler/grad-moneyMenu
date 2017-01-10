@@ -18,10 +18,11 @@ _code = if (_target in grad_moneymenu_atmObjects) then {
 
         _latestReceipts = player getVariable ["grad_moneymenu_latestReceipts",[]];
         if (count _latestReceipts > 0) then {
-            _hint pushBack "<br/>";
+            _hint pushBack "";
             _hint pushBack "Latest receipts:";
-            for [{_i=0}, {_i<((count _latestReceipts) min 3)}, {STEP}] do {
-                _hint pushBack format ["<t color='#00FF00'>%1</t> Cr - %2", _x select 0, _x select 1];
+            for [{_i=((count _latestReceipts) min 3)}, {_i>0}, {_i=_i-1}] do {
+                _data = _latestReceipts select (_i-1);
+                _hint pushBack format ["<t color='#00FF00'>%1</t> Cr - %2", _data select 0, _data select 1];
             };
         };
 
