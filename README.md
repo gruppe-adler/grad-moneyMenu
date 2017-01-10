@@ -5,7 +5,9 @@ Can be used supplementary to [GRAD List-Buymenu](https://github.com/gruppe-adler
   * give money to players
   * take money from dead and captive players
   * store money in containers (secured and unsecured)
+  * send money directly to other players' wallets (disabled by default)
   * use your bank account on ATMs (check, deposit, withdraw, transfer)
+ 
 
 GRAD MoneyMenu is multiplayer and JIP proof.
 
