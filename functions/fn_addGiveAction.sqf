@@ -4,7 +4,7 @@ if (!hasInterface) exitWith {};
 if (isNil "_target") exitWith {};
 if ((typeName _target) == "OBJECT" && {isNull _target}) exitWith {};
 
-if (isNil "grad_moneymenu_atmObjects") then {grad_moneymenu_atmObjects = [missionConfigFile >> "CfgGradBuymenu" >> "atmObjects", "array", 0] call CBA_fnc_getConfigEntry};
+if (isNil "grad_moneymenu_atmObjects") then {grad_moneymenu_atmObjects = [missionConfigFile >> "CfgGradMoneymenu" >> "atmObjects", "array", 0] call CBA_fnc_getConfigEntry};
 
 _actionDesc = switch (true) do {
     case (_target isKindOf "Man"): {"Give money"};

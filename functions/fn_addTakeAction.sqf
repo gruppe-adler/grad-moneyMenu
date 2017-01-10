@@ -4,7 +4,7 @@ if (!hasInterface) exitWith {};
 if (isNil "_target") exitWith {};
 if ((typeName _target) == "OBJECT" && {isNull _target}) exitWith {};
 
-if (isNil "grad_moneymenu_atmObjects") then {grad_moneymenu_atmObjects = [missionConfigFile >> "CfgGradBuymenu" >> "atmObjects", "array", 0] call CBA_fnc_getConfigEntry};
+if (isNil "grad_moneymenu_atmObjects") then {grad_moneymenu_atmObjects = [missionConfigFile >> "CfgGradMoneymenu" >> "atmObjects", "array", 0] call CBA_fnc_getConfigEntry};
 
 _actionDesc = if (_target in grad_moneymenu_atmObjects) then {"Withdraw money"} else {"Take money"};
 _mode = if (_target in grad_moneymenu_atmObjects) then {"ATM_WITHDRAW"} else {"TAKE"};
