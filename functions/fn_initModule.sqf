@@ -1,12 +1,12 @@
 GRAD_moneymenu_moduleRoot = [] call GRAD_moneymenu_fnc_getModuleRoot;
 
-grad_moneymenu_canGiveDefault = ([missionConfigFile >> "CfgGradBuymenu" >> "canGiveDefault", "number", 1] call CBA_fnc_getConfigEntry) == 1;
-grad_moneymenu_canTransferToSidesDefault = ([missionConfigFile >> "CfgGradBuymenu" >> "canTransferToSidesDefault", "array", []] call CBA_fnc_getConfigEntry) apply {call compile _x};
-grad_moneymenu_canTakeFromDeadDefault = ([missionConfigFile >> "CfgGradBuymenu" >> "canTakeFromDeadDefault", "number", 1] call CBA_fnc_getConfigEntry) == 1;
-grad_moneymenu_canTakeFromSurrenderedDefault = ([missionConfigFile >> "CfgGradBuymenu" >> "canTakeFromSurrenderedDefault", "number", 1] call CBA_fnc_getConfigEntry) == 1;
-grad_moneymenu_startMoney = [missionConfigFile >> "CfgGradBuymenu" >> "startMoney", "number", 0] call CBA_fnc_getConfigEntry;
-grad_moneymenu_startBankBalance = [missionConfigFile >> "CfgGradBuymenu" >> "startBankBalance", "number", 0] call CBA_fnc_getConfigEntry;
-grad_moneymenu_atmObjects = [missionConfigFile >> "CfgGradBuymenu" >> "atmObjects", "array", ["Land_Atm_01_F","Land_Atm_02_F"]] call CBA_fnc_getConfigEntry;
+grad_moneymenu_canGiveDefault = ([missionConfigFile >> "CfgGradMoneymenu" >> "canGiveDefault", "number", 1] call CBA_fnc_getConfigEntry) == 1;
+grad_moneymenu_canTransferToSidesDefault = ([missionConfigFile >> "CfgGradMoneymenu" >> "canTransferToSidesDefault", "array", []] call CBA_fnc_getConfigEntry) apply {call compile _x};
+grad_moneymenu_canTakeFromDeadDefault = ([missionConfigFile >> "CfgGradMoneymenu" >> "canTakeFromDeadDefault", "number", 1] call CBA_fnc_getConfigEntry) == 1;
+grad_moneymenu_canTakeFromSurrenderedDefault = ([missionConfigFile >> "CfgGradMoneymenu" >> "canTakeFromSurrenderedDefault", "number", 1] call CBA_fnc_getConfigEntry) == 1;
+grad_moneymenu_startMoney = [missionConfigFile >> "CfgGradMoneymenu" >> "startMoney", "number", 0] call CBA_fnc_getConfigEntry;
+grad_moneymenu_startBankBalance = [missionConfigFile >> "CfgGradMoneymenu" >> "startBankBalance", "number", 0] call CBA_fnc_getConfigEntry;
+grad_moneymenu_atmObjects = [missionConfigFile >> "CfgGradMoneymenu" >> "atmObjects", "array", ["Land_Atm_01_F","Land_Atm_02_F"]] call CBA_fnc_getConfigEntry;
 
 if (!hasInterface) exitWith {};
 
