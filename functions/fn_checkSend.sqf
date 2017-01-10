@@ -24,9 +24,6 @@ if (_mode == "ATM_TRANSFER") then {
     _lbData = _playerList lbData (lbCursel _playerList);
     _recipient = if (_lbData == "") then {objNull} else {[_lbData] call BIS_fnc_getUnitByUID};
 
-    diag_log _lbData;
-    diag_log str _recipient;
-
     uiNamespace setVariable ["grad_moneymenu_currentRecipient", _recipient];
 };
 

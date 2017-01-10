@@ -18,7 +18,11 @@ class GRAD_moneymenu {
         class loadMenu {};
         class receiveMoney {};
         class sendMoney {};
+        class setCanGive {};
+        class setCanTakeFromDead {};
+        class setCanTakeFromSurrendered {};
         class setStorage {};
+        class setTransferToSides {};
         class updateMoney {};
         class updatePlayerList {};
     };
