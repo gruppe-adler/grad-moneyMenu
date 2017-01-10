@@ -6,7 +6,7 @@ grad_moneymenu_canTakeFromDeadDefault = ([missionConfigFile >> "CfgGradBuymenu" 
 grad_moneymenu_canTakeFromSurrenderedDefault = ([missionConfigFile >> "CfgGradBuymenu" >> "canTakeFromSurrenderedDefault", "number", 1] call CBA_fnc_getConfigEntry) == 1;
 grad_moneymenu_startMoney = [missionConfigFile >> "CfgGradBuymenu" >> "startMoney", "number", 0] call CBA_fnc_getConfigEntry;
 grad_moneymenu_startBankBalance = [missionConfigFile >> "CfgGradBuymenu" >> "startBankBalance", "number", 0] call CBA_fnc_getConfigEntry;
-grad_moneymenu_atmObjects = [missionConfigFile >> "CfgGradBuymenu" >> "atmObjects", "array", ["Land_Atm_01_F"]] call CBA_fnc_getConfigEntry;
+grad_moneymenu_atmObjects = [missionConfigFile >> "CfgGradBuymenu" >> "atmObjects", "array", ["Land_Atm_01_F","Land_Atm_02_F"]] call CBA_fnc_getConfigEntry;
 
 if (!hasInterface) exitWith {};
 
