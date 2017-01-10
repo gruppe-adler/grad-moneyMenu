@@ -9,5 +9,19 @@
 Can be used supplementary to [GRAD List-Buymenu](https://github.com/gruppe-adler/grad-listBuymenu) or standalone.  
 GRAD MoneyMenu is multiplayer and JIP proof.
 
-Information on installation, configuration and usage here:
 # [MoneyMenu WIKI](https://github.com/gruppe-adler/grad-moneyMenu/wiki)
+Information on installation, configuration and usage here.
+
+# Pictures
+
+**Give money to players**
+![](http://i.imgur.com/IEec1pW.jpg)
+
+**Take money from captive, surrendered or dead players**
+![](http://i.imgur.com/6XhhFuS.jpg)
+
+**Store money in containers, either secured or unsecured:**
+![](http://i.imgur.com/4wR6ZX5.jpg)
+
+**Store money in your bank account and send it to other players:**
+![](http://i.imgur.com/3TClW5v.jpg)
