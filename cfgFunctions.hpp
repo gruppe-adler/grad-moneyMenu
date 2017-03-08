@@ -14,6 +14,7 @@ class GRAD_moneymenu {
         class addTransferAction {};
         class checkSend {};
         class formattedHint {};
+        class getFunds {};
         class getModuleRoot {};
         class initModule {postInit = 1;};
         class loadMenu {};
