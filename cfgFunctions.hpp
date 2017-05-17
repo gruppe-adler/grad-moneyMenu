@@ -23,6 +23,7 @@ class GRAD_moneymenu {
         class setCanGive {};
         class setCanTakeFromDead {};
         class setCanTakeFromSurrendered {};
+        class setFunds {};
         class setStorage {};
         class setTransferToSides {};
         class updateMoney {};
