@@ -10,5 +10,7 @@ if (!isNil "_owner") then {
     _params = [];
 };
 
+_object setVariable ["grad_moneymenu_isStorage",true,true];
+
 [_condition,_object,_params] call grad_moneymenu_fnc_addGiveAction;
 [_condition,_object,_params] call grad_moneymenu_fnc_addTakeAction;
