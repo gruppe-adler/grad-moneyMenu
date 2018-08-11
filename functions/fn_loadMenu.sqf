@@ -12,10 +12,12 @@ _myMoney = _dialog displayCtrl grad_moneymenu_myfunds;
 uiNamespace setVariable ["grad_moneymenu_currentMode", _mode];
 uiNamespace setVariable ["grad_moneymenu_currentTarget",_target];
 
+diag_log [_target,_target getVariable "grad_moneymenu_owner"];
+
 switch (_mode) do {
     case ("GIVE"): {
         uiNamespace setVariable ["grad_moneymenu_currentRecipient", _target];
-        _secure = if (!isNull (_target getVariable ["grad_moneymenu_owner",objNull])) then {"secured"} else {"unsecured"};
+        _secure = if (!isNil {_target getVariable "grad_moneymenu_owner"}) then {"secured"} else {"unsecured"};
         _text = if (_target isKindOf "Man") then {toUpper format ["Give Money to %1", (name _target)]} else {toUpper format ["Store Money (%1)", _secure]};
         _title ctrlSetText _text;
         [player,_mode] call grad_moneymenu_fnc_updateMoney;
@@ -23,7 +25,7 @@ switch (_mode) do {
 
     case ("TAKE"): {
         uiNamespace setVariable ["grad_moneymenu_currentRecipient", player];
-        _secure = if (!isNull (_target getVariable ["grad_moneymenu_owner",objNull])) then {"secured"} else {"unsecured"};
+        _secure = if (!isNil {_target getVariable "grad_moneymenu_owner"}) then {"secured"} else {"unsecured"};
         _text = if (_target isKindOf "Man") then {toUpper format ["Take money from %1", (name _target)]} else {toUpper format ["Take money from storage (%1)", _secure]};
         _title ctrlSetText _text;
         [_target,_mode] call grad_moneymenu_fnc_updateMoney;
