@@ -10,6 +10,12 @@ grad_moneymenu_startMoney = [missionConfigFile >> "CfgGradMoneymenu" >> "startMo
 grad_moneymenu_startBankBalance = [missionConfigFile >> "CfgGradMoneymenu" >> "startBankBalance", "number", 0] call CBA_fnc_getConfigEntry;
 grad_moneymenu_atmObjects = [missionConfigFile >> "CfgGradMoneymenu" >> "atmObjects", "array", ["Land_Atm_01_F","Land_Atm_02_F"]] call CBA_fnc_getConfigEntry;
 
+// listbuymenu takes precedence
+grad_moneymenu_playersLoseMoneyOnDeath = (
+    [missionConfigFile >> "CfgGradBuymenu","playersLoseMoneyOnDeath",
+        [missionConfigFile >> "CfgGradMoneymenu","playersLoseMoneyOnDeath", 1] call BIS_fnc_returnConfigEntry
+    ] call BIS_fnc_returnConfigEntry
+) == 1;
 
 if (!hasInterface) exitWith {};
 
@@ -32,4 +38,8 @@ if (!hasInterface) exitWith {};
         [{true}, _x, [], false] call grad_moneymenu_fnc_addCheckAction;
     } forEach grad_moneymenu_atmObjects;
 
+    // only add, if grad-listbuymenu not in use
+    if (isNil "grad_lbm_fnc_addPlayerEHs") then {
+        [] call grad_moneymenu_fnc_addPlayerEHs;
+    };
 }, []] call CBA_fnc_waitUntilAndExecute;
