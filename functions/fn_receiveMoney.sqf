@@ -27,7 +27,7 @@ if (local _recipient && _mode == "TAKE") then {
     _recipient setVariable ["grad_lbm_myFunds", (_recipient getVariable ["grad_lbm_myFunds",0]) + _amount, true];
 
     if (player == _recipient) then {
-        _actionDesc = if (_target isKindOf "Man") then {format ["taken from %1", name _target]} else {"taken from storage"};
+        _actionDesc = if (_target isKindOf "Man") then {format ["taken from %1", _target getVariable ["ace_name",name _target]]} else {"taken from storage"};
         [
             format ["<t color='#00FF00'>%1</t> Cr %2.", _amount,_actionDesc],
             format ["Wallet: <t color='#00FF00'>%1</t> Cr", player getVariable ["grad_lbm_myFunds",0]]
