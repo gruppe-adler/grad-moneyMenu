@@ -1,3 +1,4 @@
-params ["_unit", ["_funds",0]];
+params ["_unit", ["_funds",0], ["_setBankAccount",false]];
 
-_unit setVariable ["grad_lbm_myFunds", _funds, true];
+private _varName = ["grad_lbm_myFunds","grad_moneymenu_myBankBalance"] select _setBankAccount;
+_unit setVariable [_varName, _funds, true];
